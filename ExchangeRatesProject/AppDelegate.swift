@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ExchangeRatesProject
-//
-//  Created by олег Метлицкий on 15.02.22.
-//
-
 import UIKit
 
 @main

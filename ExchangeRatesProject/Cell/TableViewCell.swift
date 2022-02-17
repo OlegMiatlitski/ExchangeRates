@@ -2,9 +2,6 @@ import UIKit
 
 final class TableViewCell: UITableViewCell {
     
-    // MARK: - Properties
-    // MARK: Public
-    
     // MARK: Private
     
     private let backgroundLabel = UILabel()

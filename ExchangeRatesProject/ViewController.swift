@@ -3,8 +3,6 @@ import Alamofire
 
 final class ViewController: UIViewController {
     
-    // MARK: - Properties
-    // MARK: Public
     // MARK: Private
     
     private let exchangeRatesLabel = UILabel()
@@ -31,7 +29,7 @@ final class ViewController: UIViewController {
             switch result {
             case .success(let data):
                 self.arrayOfCripto = data
-            case .failure(let error):
+            case .failure(_):
                 let alert = UIAlertController(
                     title: "Error!!!",
                     message: "Couldn't find any info about Exchange Rates",
@@ -107,6 +105,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             delay: 0.05 * Double(indexPath.row),
             animations: {
                 cell.alpha = 1
-            })
+            }
+        )
     }
 }

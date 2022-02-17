@@ -12,7 +12,7 @@ struct APIManager {
     }
     
    private let header: HTTPHeaders = [
-        "X-CoinAPI-Key": "1B7157CCD-7D88-49BB-9BC1-8358A24ECD26",
+        "X-CoinAPI-Key": "B7157CCD-7D88-49BB-9BC1-8358A24ECD26",
         "Accept": "application/json"
     ]
     
@@ -35,12 +35,8 @@ struct APIManager {
                 completion(.success(converteredModels))
             case .failure(let error):
                 completion(.failure(error))
-                print(error)
             }
         }
-        
     }
     private init() { }
 }
-
-

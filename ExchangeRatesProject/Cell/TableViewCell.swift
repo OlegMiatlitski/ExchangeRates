@@ -75,6 +75,8 @@ final class TableViewCell: UITableViewCell {
         nameOfCriptoLabel.textColor = .white
         nameOfCriptoLabel.textAlignment = .left
         nameOfCriptoLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        nameOfCriptoLabel.adjustsFontSizeToFitWidth = true
+        nameOfCriptoLabel.minimumScaleFactor = 0.5
         
         valueOfCriptoLabel.textColor = .lightGray
         valueOfCriptoLabel.textAlignment = .right

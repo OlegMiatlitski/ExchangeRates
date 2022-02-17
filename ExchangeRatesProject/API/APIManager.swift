@@ -12,7 +12,7 @@ struct APIManager {
     }
     
    private let header: HTTPHeaders = [
-        "X-CoinAPI-Key": "B7157CCD-7D88-49BB-9BC1-8358A24ECD26",
+        "X-CoinAPI-Key": "1B7157CCD-7D88-49BB-9BC1-8358A24ECD26",
         "Accept": "application/json"
     ]
     
@@ -22,7 +22,7 @@ struct APIManager {
         }
     }
     
-    func getAllExchanges(completion: @escaping(([CoinClientModel]) -> Void)) {
+    func getAllExchanges(completion: @escaping((Result<[CoinClientModel], Error>) -> Void)) {
         AF.request(
             BaseConstant.baseURL + EndPoints.assets,
             method: .get,
@@ -32,8 +32,9 @@ struct APIManager {
             switch response.result {
             case .success(let data):
                 let converteredModels = data.map(ModelConverter.instance.convert)
-                completion(converteredModels)
+                completion(.success(converteredModels))
             case .failure(let error):
+                completion(.failure(error))
                 print(error)
             }
         }
@@ -41,4 +42,5 @@ struct APIManager {
     }
     private init() { }
 }
+
 

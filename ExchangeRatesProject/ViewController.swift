@@ -14,9 +14,9 @@ final class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -27,8 +27,19 @@ final class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        APIManager.instance.getAllExchanges() { data in
-            self.arrayOfCripto = data
+        APIManager.instance.getAllExchanges() { result in
+            switch result {
+            case .success(let data):
+                self.arrayOfCripto = data
+            case .failure(let error):
+                let alert = UIAlertController(
+                    title: "Error!!!",
+                    message: "Couldn't find any info about Exchange Rates",
+                    preferredStyle: .alert
+                )
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -87,5 +98,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(
+            withDuration: 0.1,
+            delay: 0.05 * Double(indexPath.row),
+            animations: {
+                cell.alpha = 1
+            })
     }
 }

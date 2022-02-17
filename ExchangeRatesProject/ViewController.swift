@@ -8,23 +8,21 @@ final class ViewController: UIViewController {
     // MARK: Private
     
     private let exchangeRatesLabel = UILabel()
-    private var tableView = UITableView()
+    private let tableView = UITableView()
     private var arrayOfCripto: [CoinClientModel] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(exchangeRatesLabel)
-        view.addSubview(tableView)
+        addSubviews()
         setupTableView()
         addConstraints()
         setupUI()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,12 +34,17 @@ final class ViewController: UIViewController {
     
     // MARK: - Setups
     
+    private func addSubviews() {
+        view.addSubview(exchangeRatesLabel)
+        view.addSubview(tableView)
+    }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
-        self.tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
     }
     
     private func addConstraints() {
@@ -62,14 +65,12 @@ final class ViewController: UIViewController {
     private func setupUI() {
         
         view.backgroundColor = UIColor(red: 20/255, green: 18/255, blue: 29/255, alpha: 1.0)
+        tableView.backgroundColor = UIColor(red: 20/255, green: 18/255, blue: 29/255, alpha: 1.0)
         exchangeRatesLabel.textColor = .white
         exchangeRatesLabel.textAlignment = .left
         exchangeRatesLabel.font = .systemFont(ofSize: 35, weight: .bold)
         exchangeRatesLabel.text = "Exchange Rates"
     }
-    
-    // MARK: - Helpers
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -88,5 +89,3 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
 }
-
-

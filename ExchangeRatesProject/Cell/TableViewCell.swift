@@ -8,8 +8,8 @@ final class TableViewCell: UITableViewCell {
     // MARK: Private
     
     private let backgroundLabel = UILabel()
-    private var nameOfCriptoLabel = UILabel()
-    private var valueOfCriptoLabel = UILabel()
+    private let nameOfCriptoLabel = UILabel()
+    private let valueOfCriptoLabel = UILabel()
     
     // MARK: - Lifecycle
     
@@ -19,6 +19,7 @@ final class TableViewCell: UITableViewCell {
         setupConstraints()
         setupUI()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -80,7 +81,4 @@ final class TableViewCell: UITableViewCell {
         valueOfCriptoLabel.font = .systemFont(ofSize: 20, weight: .medium)
         
     }
-    
-    // MARK: - Helpers
-    
 }

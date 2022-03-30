@@ -1,10 +1,9 @@
 import UIKit
-
 final class TableViewCell: UITableViewCell {
     
     // MARK: Private
     
-    private let backgroundLabel = UILabel()
+    private let backgroundLabel = UIView()
     private let nameOfCriptoLabel = UILabel()
     private let valueOfCriptoLabel = UILabel()
     
@@ -23,11 +22,9 @@ final class TableViewCell: UITableViewCell {
     
     // MARK: - API
     
-    func set(data: CoinClientModel) {
-        nameOfCriptoLabel.text = data.name
-        guard let price = data.priceUsd  else {
-            return valueOfCriptoLabel.text = "$0.000"
-        }
+    func set(_ name: String, _ priceUsd: Double) {
+        nameOfCriptoLabel.text = name
+         let price = priceUsd
         valueOfCriptoLabel.text = "$\(NSString(format: "%.3f", price))"
         
     }

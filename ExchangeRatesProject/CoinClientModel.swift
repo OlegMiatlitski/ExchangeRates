@@ -1,6 +1,5 @@
-import Foundation
 struct CoinClientModel {
-    let assetId: String?
-    let name: String
-    let priceUsd: Double?
+    let assetId: Int
+    let name: String?
+    let priceUsd: Double
 }

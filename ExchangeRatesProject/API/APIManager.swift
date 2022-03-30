@@ -1,5 +1,5 @@
 import Alamofire
-struct APIManager {
+final class APIManager {
     static let instance = APIManager()
     
     enum BaseConstant {

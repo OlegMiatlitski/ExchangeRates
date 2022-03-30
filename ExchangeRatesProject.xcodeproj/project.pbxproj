@@ -19,6 +19,7 @@
 		DC846D0027BC34C600EC0A86 /* CoinServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC846CFF27BC34C600EC0A86 /* CoinServerModel.swift */; };
 		DC846D0227BC34DA00EC0A86 /* ModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC846D0127BC34DA00EC0A86 /* ModelConverter.swift */; };
 		DC846D0527BC366400EC0A86 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC846D0427BC366400EC0A86 /* APIManager.swift */; };
+		DC96D03927D54F0300E38BEE /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC96D03727D54F0300E38BEE /* CoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DC846CFF27BC34C600EC0A86 /* CoinServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinServerModel.swift; sourceTree = "<group>"; };
 		DC846D0127BC34DA00EC0A86 /* ModelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConverter.swift; sourceTree = "<group>"; };
 		DC846D0427BC366400EC0A86 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		DC96D03827D54F0300E38BEE /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				DC15CB4B27BBB78500692A01 /* Assets.xcassets */,
 				DC15CB4227BBB78300692A01 /* AppDelegate.swift */,
 				DC15CB4427BBB78300692A01 /* SceneDelegate.swift */,
+				DC96D03727D54F0300E38BEE /* CoreData.xcdatamodeld */,
 				DC15CB5027BBB78500692A01 /* Info.plist */,
 			);
 			path = ExchangeRatesProject;
@@ -255,6 +258,7 @@
 			files = (
 				DC846D0527BC366400EC0A86 /* APIManager.swift in Sources */,
 				DC15CB4727BBB78300692A01 /* ViewController.swift in Sources */,
+				DC96D03927D54F0300E38BEE /* CoreData.xcdatamodeld in Sources */,
 				DC846CFE27BC34B600EC0A86 /* CoinClientModel.swift in Sources */,
 				DC846CFC27BBD86E00EC0A86 /* TableViewCell.swift in Sources */,
 				DC846D0227BC34DA00EC0A86 /* ModelConverter.swift in Sources */,
@@ -480,6 +484,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC96D03727D54F0300E38BEE /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC96D03827D54F0300E38BEE /* CoreData.xcdatamodel */,
+			);
+			currentVersion = DC96D03827D54F0300E38BEE /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DC15CB3727BBB78300692A01 /* Project object */;
 }
